@@ -1,0 +1,409 @@
+"set 选项设置
+"set hlsearch? 你懂的  推广：set command?
+"set all 列出所有选项设置情况
+
+"设置搜索文件的路径
+"set path+=/home/conlnfei
+set path=/usr/include
+
+"设置终端类型
+set term
+
+"显示行号 或者set nu   
+set number
+
+"不显示行号 或者set nonu   
+set nonumber 
+
+"显示制表位^i和行尾标志$
+set list
+
+"将制表符用>---表示 同行末尾用-表示
+set listchars=tab:>-,trail:-
+
+"不显示制表位^i和行尾标志$
+set nolist
+
+"忽略大小写
+set ignorecase 
+
+"不忽略大小写
+set noignorecase 
+
+"在转到别的文件时，若没保存当前文件则显示nowrite信息
+set warn 
+
+"显示简短的警告信息
+set terse 
+
+"禁止在搜索到达文件两端时，又从另一端开始
+set nowrapscan  
+
+"开启wrapscan
+set wrapscan 
+
+"vim 兼容模式
+set compatible 
+
+"非vim兼容模式
+set nocompatible 
+
+"显示所处的工作模式
+set showmode 
+
+"不显示所处的工作模式
+set noshowmode 
+
+"显示光标所在的行列
+set ruler 
+
+"不显示光标所在的行列
+set noruler 
+
+"高亮显示匹配结果
+set hlsearch 
+
+"不高亮显示匹配结果
+set nohlsearch 
+
+"在输入要搜索的字符时vim就已经开始了搜索 
+set incsearch 
+
+"关闭incsearch
+set noincsearch 
+
+"自动缩进
+set autoindent
+
+"关闭自动缩进
+set noautoindent
+
+"设置冒号命令和搜索命令的命令历史列表的长度
+set history=50
+
+"在Vim窗口的右下角显示一个在normal工作模式下的完整命令已经完成的部分
+set showcmd
+
+"这个命令开启了Vim的三种智能:
+"1. 自动识别文件类型
+"你开始编辑一个文件时, Vim就会自动识别它是何种类型的文件.
+"比如说你打开了"main.c", Vim就会根据它的".c"扩展名知道它是
+"一个类型为"c"的C语言源程序文件. 当你编辑一个文件其第一行
+"是"#!/bin/sh"时, Vim又可以据此判断它是一个类型为"sh"的shell脚
+"本文件.
+"2. 用文件类型plugin脚本
+"不同的文件类型需要搭配适合于它1 的编辑选项. 比如说你在编辑一
+"个"c"文件, 那么打开'cindent'就非常有用. 这些对某种文件类型
+"来说最常用的选项可以放在一个Vim中叫文件类型plugin的脚本里.
+"你还可以加上你自己写的, 请参考|write-filetype-plain|.
+"3. 使用缩进定义文件
+"编辑程序的时候, 语句的缩进可以让它自动完成. Vim为众多不同
+"的文件类型提供了相应的缩进方案. 请参考|filetype-indent-on|和'indentexpr'选
+"项.
+filetype plugin indent  on
+
+"这让Vim可以自动断行, 触发点是当前行已超过78个字符了. 但是只
+"对类型是普通文本的文件生效. "autocmd FileType text"是一个自动
+"命令. 它所定义的是每当文件类型被设置为"text"时就自动执行它后面
+"的命令. "setlocal textwidth=78"把"textwidth"选项的值设置为78,
+"但这种设置只对当前的一个文件有效.
+autocmd FileType text setlocal textwidth=78
+
+"折行显示
+set wrap
+
+"不折行显示
+set nowrap
+
+"Vim中多数移动光标的命令会在遇到行首或行尾时停止不动2 . 'whichwrap'选
+"项可以用来控制这些移动光标的命令此时的行为规则. 下面的设置是它的
+"默认值
+set whichwrap=b,s
+
+"在normal模式下方向箭头键在遇到边界时能只能上上下下
+set whichwrap=b,s,<,>
+
+"在insert模式下方向箭头键在遇到边界时能只能上上下下
+set whichwrap=b,s,<,>,[,]
+
+"指明哪些字符是word关键字
+set iskeyword
+"或者这样写
+"set iskeyword+=-
+"set iskeyword-=-
+iskeyword=@,48-57,_,192-255,#
+
+"控制底部有几行用来显示vim信息
+set cmdheight=3
+
+"一个映射使你可以把一连串Vim命令以一个按键来表示. 假设说你要
+"把某些词以花括号括起来. 或者说, 你需要把象"amount"这个的一个词
+"变为"{amount}". 使用":map"命令, 你就可以告诉Vim按下F5就去完成这
+"一操作
+"备注: 练习这个命令时, 你必需键入4个字符来键入<F5>,
+"键 入5个 字 符 键 入<Esc> , 而 不 是 按 下 键 盘 上 的F5键
+"和ESC键. 在该手册中都要留心这种差异
+map <F5> i{<Esc>ea}<Esc>
+
+"开启语法加亮
+syntax on
+
+"开启相应文件的plugin
+filetype plugin on
+
+"设置iskeyword 为默认值
+set iskeyword&
+
+"设置vim文本编辑器的背景颜色
+"set background=dark
+set background=dark
+
+"重新设置vim颜色为默认颜色
+syntax reset
+
+"设置颜色方为evening
+colorscheme evening
+
+"在多个文件编辑时自动存盘
+set autowrite
+
+"关闭自动存盘
+set noautowrite
+
+
+"set 选项设置
+"set hlsearch? 你懂的  推广：set command?
+"set all 列出所有选项设置情况
+
+"设置终端类型
+set term
+
+"显示行号 或者set nu   
+set number
+
+"不显示行号 或者set nonu   
+set nonumber 
+
+"显示制表位^i和行尾标志$
+set list
+
+"将制表符用>---表示 同行末尾用-表示
+set listchars=tab:>-,trail:-
+
+"不显示制表位^i和行尾标志$
+set nolist
+
+"忽略大小写
+set ignorecase 
+
+"不忽略大小写
+set noignorecase 
+
+"在转到别的文件时，若没保存当前文件则显示nowrite信息
+set warn 
+
+"显示简短的警告信息
+set terse 
+
+"禁止在搜索到达文件两端时，又从另一端开始
+set nowrapscan  
+
+"开启wrapscan
+set wrapscan 
+
+"vim 兼容模式
+set compatible 
+
+"非vim兼容模式
+set nocompatible 
+
+"显示所处的工作模式
+set showmode 
+
+"不显示所处的工作模式
+set noshowmode 
+
+"显示光标所在的行列
+set ruler 
+
+"不显示光标所在的行列
+set noruler 
+
+"高亮显示匹配结果
+set hlsearch 
+
+"不高亮显示匹配结果
+set nohlsearch 
+
+"在输入要搜索的字符时vim就已经开始了搜索 
+set incsearch 
+
+"关闭incsearch
+set noincsearch 
+
+"自动缩进
+set autoindent
+
+"关闭自动缩进
+set noautoindent
+
+"设置冒号命令和搜索命令的命令历史列表的长度
+set history=50
+
+"在Vim窗口的右下角显示一个在normal工作模式下的完整命令已经完成的部分
+set showcmd
+
+"这个命令开启了Vim的三种智能:
+"1. 自动识别文件类型
+"你开始编辑一个文件时, Vim就会自动识别它是何种类型的文件.
+"比如说你打开了"main.c", Vim就会根据它的".c"扩展名知道它是
+"一个类型为"c"的C语言源程序文件. 当你编辑一个文件其第一行
+"是"#!/bin/sh"时, Vim又可以据此判断它是一个类型为"sh"的shell脚
+"本文件.
+"2. 用文件类型plugin脚本
+"不同的文件类型需要搭配适合于它1 的编辑选项. 比如说你在编辑一
+"个"c"文件, 那么打开'cindent'就非常有用. 这些对某种文件类型
+"来说最常用的选项可以放在一个Vim中叫文件类型plugin的脚本里.
+"你还可以加上你自己写的, 请参考|write-filetype-plain|.
+"3. 使用缩进定义文件
+"编辑程序的时候, 语句的缩进可以让它自动完成. Vim为众多不同
+"的文件类型提供了相应的缩进方案. 请参考|filetype-indent-on|和'indentexpr'选
+"项.
+filetype plugin indent  on
+
+"这让Vim可以自动断行, 触发点是当前行已超过78个字符了. 但是只
+"对类型是普通文本的文件生效. "autocmd FileType text"是一个自动
+"命令. 它所定义的是每当文件类型被设置为"text"时就自动执行它后面
+"的命令. "setlocal textwidth=78"把"textwidth"选项的值设置为78,
+"但这种设置只对当前的一个文件有效.
+autocmd FileType text setlocal textwidth=78
+
+"折行显示
+set wrap
+
+"不折行显示
+set nowrap
+
+"Vim中多数移动光标的命令会在遇到行首或行尾时停止不动2 . 'whichwrap'选
+"项可以用来控制这些移动光标的命令此时的行为规则. 下面的设置是它的
+"默认值
+set whichwrap=b,s
+
+"在normal模式下方向箭头键在遇到边界时能只能上上下下
+set whichwrap=b,s,<,>
+
+"在insert模式下方向箭头键在遇到边界时能只能上上下下
+set whichwrap=b,s,<,>,[,]
+
+"指明哪些字符是word关键字
+set iskeyword
+"或者这样写
+"set iskeyword+=-
+"set iskeyword-=-
+iskeyword=@,48-57,_,192-255,#
+
+"控制底部有几行用来显示vim信息
+set cmdheight=3
+
+"一个映射使你可以把一连串Vim命令以一个按键来表示. 假设说你要
+"把某些词以花括号括起来. 或者说, 你需要把象"amount"这个的一个词
+"变为"{amount}". 使用":map"命令, 你就可以告诉Vim按下F5就去完成这
+"一操作
+"备注: 练习这个命令时, 你必需键入4个字符来键入<F5>,
+"键 入5个 字 符 键 入<Esc> , 而 不 是 按 下 键 盘 上 的F5键
+"和ESC键. 在该手册中都要留心这种差异
+map <F5> i{<Esc>ea}<Esc>
+
+"开启语法加亮
+syntax on
+
+"开启相应文件的plugin
+filetype plugin on
+
+"设置iskeyword 为默认值
+set iskeyword&
+
+"设置vim文本编辑器的背景颜色
+"set background=dark
+set background=dark
+
+"重新设置vim颜色为默认颜色
+syntax reset
+
+"设置颜色方为evening
+colorscheme evening
+
+"在多个文件编辑时自动存盘
+set autowrite
+
+"关闭自动存盘
+set noautowrite
+
+"设置生成备份
+set backup
+
+"给生成的备份设置默认后缀
+set backupext=.bak
+
+"设置备份文件存放的目录
+set backupdir=/usr/share/bak
+
+"保存原始版本
+set patchmode=.orig
+
+"开启vi -M foo.txt 模式
+set modifiable
+
+"设置所有窗口均摊屏幕上可用的高度和宽度
+set equalalways
+
+
+	
+
+"这段脚本打开语法高亮功能, 前提是当前系统支持彩色显示
+if &t_Co > 2 || has("gui_running")
+		syntax on
+		set hlsearch
+endif
+
+"这段脚本告诉Vim在覆盖一个文件之前备份该文件. 但是对VMS系统除
+"外, 因为该系统已经为文件保存了老的版本. 备份文件名由当前文件名
+"加后辍"~"组成.
+if has("vms")
+		set nobackup
+else
+		set backup
+endif
+
+"这是另一个自动命令. 这次它服务的对象是所有类型的文件. 它所
+"执行的复杂功能是检查是否定义了标记'"2 , 如果定义了就跳转到这个位
+"置去. 每一行前面的反斜杠表示该行是前一行命令的延续. 它可以避免
+"脚本中有些行变得过长.
+autocmd BufReadPost *
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\ exe "normal g‘\"" |
+	\ endif
+
+"这段脚本打开语法高亮功能, 前提是当前系统支持彩色显示
+if &t_Co > 2 || has("gui_running")
+		syntax on
+		set hlsearch
+endif
+
+"这段脚本告诉Vim在覆盖一个文件之前备份该文件. 但是对VMS系统除
+"外, 因为该系统已经为文件保存了老的版本. 备份文件名由当前文件名
+"加后辍"~"组成.
+if has("vms")
+		set nobackup
+else
+		set backup
+endif
+
+"这是另一个自动命令. 这次它服务的对象是所有类型的文件. 它所
+"执行的复杂功能是检查是否定义了标记'"2 , 如果定义了就跳转到这个位
+"置去. 每一行前面的反斜杠表示该行是前一行命令的延续. 它可以避免
+"脚本中有些行变得过长.
+autocmd BufReadPost *
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\ exe "normal g‘\"" |
+	\ endif
